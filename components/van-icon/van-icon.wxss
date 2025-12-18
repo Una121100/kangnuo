@@ -1,0 +1,117 @@
+.icon {
+  position: relative;
+  display: inline-block;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+.sq {
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.search .circle {
+  position: absolute;
+  left: 12%;
+  top: 12%;
+  width: 60%;
+  height: 60%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.search .handle {
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  width: 32%;
+  height: 2px;
+  background: currentColor;
+  transform: rotate(45deg);
+  transform-origin: right bottom;
+}
+
+.chat .bubble {
+  position: absolute;
+  left: 10%;
+  top: 12%;
+  width: 80%;
+  height: 64%;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+}
+.chat .tail {
+  position: absolute;
+  left: 22%;
+  bottom: 6%;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-top: 10px solid currentColor;
+}
+
+.home .roof {
+  position: absolute;
+  left: 15%;
+  top: 12%;
+  width: 0;
+  height: 0;
+  border-left: 40% solid transparent;
+  border-right: 40% solid transparent;
+  border-bottom: 30% solid currentColor;
+}
+.home .house {
+  position: absolute;
+  left: 18%;
+  bottom: 12%;
+  width: 64%;
+  height: 42%;
+  border: 2px solid currentColor;
+  border-top: none;
+}
+
+.service .arc.big {
+  position: absolute;
+  left: 12%;
+  top: 18%;
+  width: 76%;
+  height: 64%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.service .arc.small {
+  position: absolute;
+  left: 24%;
+  top: 30%;
+  width: 52%;
+  height: 40%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.cart .basket {
+  position: absolute;
+  left: 16%;
+  top: 22%;
+  width: 68%;
+  height: 40%;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+}
+.cart .wheel {
+  position: absolute;
+  bottom: 6%;
+  width: 16%;
+  height: 16%;
+  border-radius: 50%;
+  background: currentColor;
+}
+.cart .wheel.left {
+  left: 26%;
+}
+.cart .wheel.right {
+  right: 22%;
+}

@@ -1,0 +1,140 @@
+.detail-swiper {
+  height: 420rpx;
+}
+.detail-img {
+  width: 100%;
+  height: 100%;
+}
+
+.price-title {
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.fav {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 8rpx 16rpx;
+  border-radius: 6px;
+}
+.price {
+  color: var(--brand);
+  font-size: 36rpx;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12rpx;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+.list {
+  margin-top: 20rpx;
+}
+.cell {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+.cell:last-child {
+  border-bottom: none;
+}
+.arrow {
+  color: #bbb;
+}
+
+.spec-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: flex-end;
+}
+.popup-card {
+  background: #fff;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 20rpx;
+}
+.popup-title {
+  font-weight: 600;
+  margin-bottom: 12rpx;
+}
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.spec-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12rpx 16rpx;
+  margin: 8rpx;
+  display: flex;
+  justify-content: space-between;
+  min-width: 40%;
+}
+.spec-item.active {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12rpx;
+  margin-top: 12rpx;
+}
+
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 12rpx 16rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  border-top: 1px solid #eee;
+}
+.icons {
+  display: flex;
+  gap: 12rpx;
+}
+.icon {
+  background: #f5f5f5;
+  padding: 12rpx 16rpx;
+  border-radius: 8px;
+}
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-left: auto;
+}
+.ctas van-button {
+  flex: 1;
+}
+.btn.add {
+  background: #ff9a9a;
+  color: #fff;
+}
+.btn.buy {
+  background: var(--brand);
+  color: #fff;
+}

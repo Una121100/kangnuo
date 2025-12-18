@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="card" style="padding:12px;">
+    <view class="row" style="justify-content:space-between;">
+      <text>订单确认</text>
+      <text class="price">¥{{cart.totals.totalPrice}}</text>
+    </view>
+    <block wx:for="{{cart.items}}" wx:key="id">
+      <view class="row" style="padding:6px 0;">
+        <text style="flex:1;">{{item.name}} × {{item.qty}}</text>
+        <text>¥{{item.subtotal}}</text>
+      </view>
+    </block>
+    <button class="btn" style="width:100%;" bindtap="submit">提交订单</button>
+  </view>
+
+  <tabbar current="order"></tabbar>
+</view>

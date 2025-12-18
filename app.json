@@ -1,0 +1,12 @@
+{
+  "pages": ["pages/index/index", "pages/product/product", "pages/cart/cart", "pages/order/order", "pages/profile/profile"],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E0F7FF",
+    "navigationBarTitleText": "康诺严选",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

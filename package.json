@@ -1,0 +1,9 @@
+{
+  "name": "youzan-miniapp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WeChat mini program with Youzan-style UI",
+  "dependencies": {
+    "@vant/weapp": "^1.11.7"
+  }
+}

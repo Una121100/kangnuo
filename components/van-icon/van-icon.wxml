@@ -1,0 +1,40 @@
+<view class="icon" style="width:{{size}}px;height:{{size}}px;color:{{color}}">
+  <block wx:if="{{name==='apps-o'}}">
+    <view class="grid">
+      <block wx:for="{{grid9}}" wx:key="*">
+        <view class="sq"></view>
+      </block>
+    </view>
+  </block>
+  <block wx:elif="{{name==='search'}}">
+    <view class="search">
+      <view class="circle"></view>
+      <view class="handle"></view>
+    </view>
+  </block>
+  <block wx:elif="{{name==='chat-o'}}">
+    <view class="chat">
+      <view class="bubble"></view>
+      <view class="tail"></view>
+    </view>
+  </block>
+  <block wx:elif="{{name==='home-o'}}">
+    <view class="home">
+      <view class="roof"></view>
+      <view class="house"></view>
+    </view>
+  </block>
+  <block wx:elif="{{name==='service-o'}}">
+    <view class="service">
+      <view class="arc big"></view>
+      <view class="arc small"></view>
+    </view>
+  </block>
+  <block wx:elif="{{name==='shopping-cart-o'}}">
+    <view class="cart">
+      <view class="basket"></view>
+      <view class="wheel left"></view>
+      <view class="wheel right"></view>
+    </view>
+  </block>
+</view>

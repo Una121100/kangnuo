@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="topbar">
+    <view class="menu" bindtap="onMenu"><van-icon name="apps-o" size="20" /></view>
+    <view class="search">
+      <input placeholder="搜索商品" confirm-type="search" bindinput="onSearchInput" bindconfirm="onSearchConfirm" />
+      <!-- <van-icon name="search" size="18" color="#666" class="icon"/> -->
+    </view>
+    <view class="msg" bindtap="onMsg"><van-icon name="chat-o" size="20" /></view>
+  </view>
+
+  <!-- <swiper class="banner-swiper" autoplay="{{true}}" circular="{{true}}" interval="4000">
+    <block wx:for="{{banners}}" wx:key="id">
+      <swiper-item bindtap="onTapBanner" data-link="{{item.link}}">
+        <image class="banner-img" src="{{item.image}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper> -->
+
+  <view class="grid">
+    <block wx:for="{{products}}" wx:key="id">
+      <view class="grid-item">
+        <product-card product="{{item}}" compact="true" bind:navigate="onGoDetail"></product-card>
+      </view>
+    </block>
+  </view>
+
+  <tabbar current="index"></tabbar>
+</view>

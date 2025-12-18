@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabbar": "../../components/tabbar/tabbar",
+    "van-icon": "../../components/van-icon/van-icon",
+    "van-button": "../../components/van-button/van-button"
+  }
+}

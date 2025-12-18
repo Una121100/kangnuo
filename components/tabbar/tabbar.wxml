@@ -1,0 +1,6 @@
+<view class="tabbar">
+  <view class="tab {{current==='index'?'active':''}}" data-page="index" bindtap="go">精选</view>
+  <view class="tab {{current==='cart'?'active':''}}" data-page="cart" bindtap="go">购物车</view>
+  <view class="tab {{current==='order'?'active':''}}" data-page="order" bindtap="go">订单</view>
+  <view class="tab {{current==='profile'?'active':''}}" data-page="profile" bindtap="go">我的</view>
+</view>

@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="card" style="padding:12px;">
+    <image src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400" mode="aspectFill" style="width:80px;height:80px;border-radius:50%;"></image>
+    <text style="display:block;margin-top:8px;font-weight:600;">游客</text>
+    <text style="color:#999;">欢迎来到康诺严选商城</text>
+    <button class="btn" style="margin-top:16px;" bindtap="goOrders">我的订单</button>
+  </view>
+
+  <tabbar current="profile"></tabbar>
+</view>

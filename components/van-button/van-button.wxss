@@ -1,0 +1,14 @@
+.van-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 88rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  border-radius: 12rpx;
+  background: #eee;
+}
+.van-btn.round { border-radius: 9999rpx; }
+.van-btn.warning { background:#ff9a9a; color:#fff; }
+.van-btn.danger { background:#ee0a24; color:#fff; }

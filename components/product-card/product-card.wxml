@@ -1,0 +1,15 @@
+<view class="product-card card {{compact ? 'compact' : ''}}" bindtap="onNavigate">
+  <image class="cover" src="{{product.image}}" mode="aspectFill"></image>
+  <view class="content">
+    <view class="row">
+      <text class="title">{{product.name}}</text>
+      <text class="tag">{{product.tag}}</text>
+    </view>
+    <text class="desc">{{product.desc}}</text>
+    <view class="footer">
+      <text class="price">¥{{product.price}}</text>
+      <text class="sold">已售{{product.sold || 0}}</text>
+      <button class="btn" bindtap="onAdd" wx:if="{{!compact}}">加入购物车</button>
+    </view>
+  </view>
+</view>
