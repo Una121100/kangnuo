@@ -1,6 +1,24 @@
 <view class="tabbar">
-  <view class="tab {{current==='index'?'active':''}}" data-page="index" bindtap="go">精选</view>
-  <view class="tab {{current==='cart'?'active':''}}" data-page="cart" bindtap="go">购物车</view>
-  <view class="tab {{current==='order'?'active':''}}" data-page="order" bindtap="go">订单</view>
-  <view class="tab {{current==='profile'?'active':''}}" data-page="profile" bindtap="go">我的</view>
+  <view class="tab {{current==='index'?'active':''}}" data-page="index" bindtap="go">
+   <!-- like-o -->
+    <van-icon name="fire-o" size="22px" color="{{current==='index' ? '#ee0a24' : '#999'}}" /> 
+    <text class="label" style="color:{{current==='index' ? '#ee0a24' : '#999'}}">精选</text>
+  </view>
+  <!-- <view class="tab {{current==='hot'?'active':''}}" data-page="hot" bindtap="go">
+    <van-icon name="fire-o" size="22px" color="{{current==='hot' ? '#ee0a24' : '#999'}}" />
+    <text class="label" style="color:{{current==='index' ? '#ee0a24' : '#999'}}">热卖榜</text>
+  </view> -->
+  <view class="tab {{current==='cart'?'active':''}}" data-page="cart" bindtap="go">
+    <van-icon name="shopping-cart-o" size="22px" color="{{current==='cart' ? '#ee0a24' : '#999'}}" />
+    <text class="label" style="color:{{current==='cart' ? '#ee0a24' : '#999'}}">购物车</text>
+  </view>
+
+  <view class="tab {{current==='order'?'active':''}}" data-page="order" bindtap="go"> 
+  <van-icon name="balance-list-o" size="22px" color="{{current==='order' ? '#ee0a24' : '#999'}}" />
+    <text class="label" style="color:{{current==='order' ? '#ee0a24' : '#999'}}">订单</text>
+  </view>
+  <view class="tab {{current==='profile'?'active':''}}" data-page="profile" bindtap="go">
+    <van-icon name="user-o" size="22px" color="{{current==='profile' ? '#ee0a24' : '#999'}}" />
+    <text class="label" style="color:{{current==='profile' ? '#ee0a24' : '#999'}}">我的</text>
+  </view>
 </view>

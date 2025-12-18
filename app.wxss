@@ -1,4 +1,8 @@
 /* 主题色与通用样式（康诺风格：红色主色） */
+/* * {
+  line-height: 1;
+  vertical-align: middle;
+} */
 :root {
   --brand: #f44;
   --text: #333;
@@ -20,7 +24,7 @@ page {
   height: 100%; /* 占满屏幕高度（小程序可用 100%，需配合 page { height: 100% }） */
   overflow: hidden; /* 防止容器整体滚动 */
   background: #fff;
-  padding-bottom: 45px;
+  padding-bottom: 70px;
   box-sizing: border-box;
 }
 .page-mainer {
@@ -32,22 +36,13 @@ page {
   padding: 12px 10px;
   background: #f2f3f5;
 }
-.card {
+
+/* .card {
   background: var(--card);
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
+} */
 
-.btn {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 6px;
-  background: var(--brand);
-  color: #fff;
-  font-weight: 600;
-}
 
-.price {
-  color: var(--brand);
-  font-weight: 600;
-}
+
+

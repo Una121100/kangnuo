@@ -5,7 +5,10 @@
   width: 100%;
   height: 100%;
 }
-
+.card{
+  background: #fff;
+  border-radius: 4px;
+}
 .price-title {
   margin-top: 20rpx;
   padding: 20rpx;
@@ -21,9 +24,11 @@
 }
 .fav {
   background: #fff;
-  border: 1px solid #eee;
+ font-size:12px;
   padding: 8rpx 16rpx;
-  border-radius: 6px;
+  text-align: center;
+  color: #bbb;
+
 }
 .price {
   color: var(--brand);
@@ -59,7 +64,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 150px;
   top: 0;
   background: rgba(0, 0, 0, 0.4);
   display: flex;
@@ -108,30 +113,40 @@
   background: #fff;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 12rpx 16rpx;
   padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
   border-top: 1px solid #eee;
 }
-.icons {
+.action-icon{
+  width: 100px;
+  height: 100%;
   display: flex;
+  align-items: center;
   gap: 12rpx;
 }
-.icon {
-  background: #f5f5f5;
-  padding: 12rpx 16rpx;
-  border-radius: 8px;
+
+/* 还原 van-icon 原生样式，避免冲突 */
+.van-icon {
+  line-height: 1 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
 }
 .ctas {
   display: flex;
   align-items: center;
-  gap: 12rpx;
-  margin-left: auto;
+
+  gap: 20rpx;
+  /* margin-left: auto; */
 }
-.ctas van-button {
-  flex: 1;
+.ctas .van-button {
+  display: inline-block; /* 行内块，宽度默认由内容/内边距决定 */
+  padding: 10px 16px; /* 左右内边距会撑宽按钮，覆盖 width */
+  width: auto; /* 自动宽度，优先级高于普通自定义样式 */
 }
 .btn.add {
-  background: #ff9a9a;
+  /* width:140px !important; */
+  /* background: #ff9a9a; */
   color: #fff;
 }
 .btn.buy {

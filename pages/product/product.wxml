@@ -1,55 +1,64 @@
 <view class="container">
-  <swiper class="detail-swiper" autoplay="{{true}}" circular="{{true}}" interval="4000">
-    <swiper-item><image class="detail-img" src="{{product.image}}" mode="aspectFill"></image></swiper-item>
-    <swiper-item><image class="detail-img" src="{{product.image}}" mode="aspectFill"></image></swiper-item>
-  </swiper>
-
-  <view class="price-title card">
-    <text class="price">{{priceText}}</text>
-    <view class="title-row">
-      <text class="title">{{product.name}}</text>
-      <button class="fav" bindtap="toggleFav">{{fav?'★':'☆'}}</button>
-    </view>
-    <view class="meta">
-      <text>运费 ¥0.00 - 1.00</text>
-      <text>已售 {{product.sold || 0}}</text>
-    </view>
-  </view>
-
-  <view class="list card">
-    <view class="cell" bindtap="openService">
-      <text>服务</text>
-      <text class="arrow">›</text>
-    </view>
-    <view class="cell" bindtap="openSpec">
-      <text>选择 规格</text>
-      <text class="arrow">›</text>
-    </view>
-  </view>
-
-  <view class="spec-popup" wx:if="{{showSpec}}">
-    <view class="popup-card">
-      <view class="popup-title">规格</view>
-      <view class="specs">
-        <block wx:for="{{specs}}" wx:key="name">
-          <view class="spec-item {{index===selectedSpec?'active':''}}" data-index="{{index}}" bindtap="selectSpec">
-            <text>{{item.name}}</text>
-            <text>¥{{item.price}}</text>
-          </view>
-        </block>
+  <scroll-view scroll-y="true" class="page-mainer">
+    <swiper class="detail-swiper" autoplay="{{true}}" circular="{{true}}" interval="4000">
+      <swiper-item><image class="detail-img" src="{{product.image}}" mode="aspectFill"></image></swiper-item>
+      <swiper-item><image class="detail-img" src="{{product.image}}" mode="aspectFill"></image></swiper-item>
+    </swiper>
+  
+    <view class="price-title card">
+      <text class="price">{{priceText}}</text>
+      <view class="title-row">
+        <text class="title">{{product.name}}</text>
+        <view class="fav" bindtap="toggleFav">
+          <view style="font-size:20px;color: {{fav ? '#fe6a00' : '#999'}}" >{{fav?'★':'☆'}}</view>
+          <view>收藏</view>
+        </view>
+        <!-- <button class="fav" bindtap="toggleFav">{{fav?'★':'☆'}}</button> -->
       </view>
-      <view class="popup-actions">
-        <button size="mini" bindtap="closeSpec">取消</button>
-        <button size="mini" type="primary" bindtap="confirmSpec">确定</button>
+      <view class="meta">
+        <text>运费 ¥0.00 - 1.00</text>
+        <text>已售 {{product.sold || 0}}</text>
       </view>
     </view>
-  </view>
 
+    <view class="list card">
+      <view class="cell" bindtap="openService">
+        <text>服务</text>
+        <text class="arrow">›</text>
+      </view>
+      <!-- <view class="cell" bindtap="openSpec">
+        <text>选择 规格</text>
+        <text class="arrow">›</text>
+      </view> -->
+    </view>
+
+    <view class="spec-popup" wx:if="{{showSpec}}">
+      <view class="popup-card">
+        <view class="popup-title">规格</view>
+        <view class="specs">
+          <block wx:for="{{specs}}" wx:key="name">
+            <view class="spec-item {{index===selectedSpec?'active':''}}" data-index="{{index}}" bindtap="selectSpec">
+              <text>{{item.name}}</text>
+              <text>¥{{item.price}}</text>
+            </view>
+          </block>
+        </view>
+        <view class="popup-actions">
+          <button size="mini" bindtap="closeSpec">取消</button>
+          <button size="mini" type="primary" bindtap="confirmSpec">确定</button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
   <view class="bottom-bar">
-    <view class="icons">
-      <view class="icon" bindtap="goHome"><van-icon name="home-o" size="20" /></view>
-      <view class="icon" bindtap="goService"><van-icon name="service-o" size="20" /></view>
-      <view class="icon" bindtap="goCart"><van-icon name="shopping-cart-o" size="20" /></view>
+    <view class="action-icon">
+      <view class="icon" bindtap="goHome">
+        <van-icon name="shop-o" size="25" />
+      </view>
+      <!-- <view class="icon" bindtap="goService"><van-icon name="chat-o" size="20" color="#333" /></view> -->
+      <view class="icon" bindtap="goCart">
+        <van-icon name="shopping-cart-o" size="25" />
+      </view>
     </view>
     <view class="ctas">
       <van-button type="warning" round block="{{true}}" class="btn add" bindtap="add">加入购物车</van-button>

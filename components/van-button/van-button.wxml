@@ -1,1 +1,7 @@
-<button class="van-btn {{type}} {{round?'round':''}}" style="width:{{block?'100%':''}};" bindtap="onTap"><slot /></button>
+<button
+  class="van-btn {{type}} {{round?'round':''}} {{size}}"
+  style="width:{{block?'100%':''}};{{customStyle}}"
+  bindtap="onTap"
+>
+  <slot />
+</button>

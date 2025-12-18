@@ -19,19 +19,19 @@ Page({
     // Here we'll default to true if undefined, or keep existing state if we were maintaining it separately
     // For simplicity, let's assume all checked by default or sync from store if store supported it.
     // Since the store provided earlier was simple, we'll extend the items locally.
-    
+
     // However, if we just overwrite from store, we lose checked state.
     // Let's try to merge checked state or just re-init.
-    
+
     let items = cartData.items.map(item => ({
       ...item,
-      checked: item.hasOwnProperty('checked') ? item.checked : true 
+      checked: item.hasOwnProperty('checked') ? item.checked : true
     }));
 
-    this.setData({ 
-      cart: { items } 
+    this.setData({
+      cart: { items }
     });
-    
+
     this.calcTotal();
   },
 
@@ -66,7 +66,7 @@ Page({
   onItemCheck(e) {
     const id = e.currentTarget.dataset.id;
     const isChecked = e.detail;
-    
+
     const items = this.data.cart.items.map(item => {
       if (item.id === id) {
         return { ...item, checked: isChecked };
@@ -86,7 +86,7 @@ Page({
       checked: isChecked
     }));
 
-    this.setData({ 
+    this.setData({
       'cart.items': items,
       allChecked: isChecked
     });
@@ -97,9 +97,9 @@ Page({
   onQtyChange(e) {
     const id = e.currentTarget.dataset.id;
     const newQty = e.detail;
-    
+
     store.updateQuantity(id, newQty);
-    
+
     // Update local state without losing checked status
     const items = this.data.cart.items.map(item => {
       if (item.id === id) {
@@ -107,7 +107,7 @@ Page({
       }
       return item;
     });
-    
+
     this.setData({ 'cart.items': items });
     this.calcTotal();
   },
@@ -115,7 +115,7 @@ Page({
   remove(e) {
     const id = Number(e.currentTarget.dataset.id);
     store.removeFromCart(id);
-    
+
     // Refresh but try to keep checked state logic valid? 
     // Actually standard refresh is fine, removed item is gone.
     // We just need to make sure we don't error out.
@@ -135,7 +135,7 @@ Page({
   },
 
   goHome() {
-    wx.switchTab({
+    wx.redirectTo({
       url: '/pages/index/index'
     });
   }

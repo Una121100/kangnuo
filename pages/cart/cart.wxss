@@ -1,7 +1,7 @@
 /* Custom Header */
 .custom-header {
   background: #fff;
-  padding: 70px 0 10px; /* Adjust for status bar */
+  padding: 55px 0 20px; /* Adjust for status bar */
   text-align: center;
   position: sticky;
   top: 0;
@@ -159,7 +159,7 @@
 /* Submit Bar Customization */
 .custom-submit-bar {
   padding-bottom: 0px !important; /* 适配安全区 */
-  bottom: 50px !important;
+  bottom: 80px !important;
 }
 
 .page-mainer {
