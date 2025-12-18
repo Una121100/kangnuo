@@ -1,6 +1,9 @@
 <view class="container">
   <view class="topbar">
-    <view class="menu" bindtap="onMenu"><van-icon name="apps-o" /></view>
+    <view class="menu" bindtap="onMenu">
+      <van-icon name="apps-o" />
+      <view style="font-size:13px;color:#666;margin-top: 3px;">分类</view>
+    </view>
     <view class="search">
       <input placeholder="搜索商品" confirm-type="search" bindinput="onSearchInput" bindconfirm="onSearchConfirm" />
       <!-- <van-icon name="search" size="18" color="#666" class="icon"/> -->

@@ -1,0 +1,64 @@
+<view class="confirm-page">
+  <!-- Header Fixed -->
+  <view class="header">
+    <van-icon name="arrow-left" size="20px" bindtap="goBack" />
+    <text class="title">确认订单</text>
+    <view class="header-right">
+    </view>
+  </view>
+
+  <!-- Body Scroll -->
+  <scroll-view scroll-y="true" class="body">
+    <!-- Address -->
+    <view class="address card">
+      <view class="row">
+        <van-icon name="location-o" color="#333" />
+        <view class="info">
+          <view class="top">
+            <text class="name">收货人：{{addr.name}}</text>
+            <text class="phone">{{addr.phone}}</text>
+          </view>
+          <text class="detail">收货地址：{{addr.full}}</text>
+        </view>
+      </view>
+      <view class="dash"></view>
+    </view>
+
+    <!-- Shops & Products (list) -->
+    <block wx:for="{{shops}}" wx:key="shopName">
+      <view class="shop card">
+        <view class="shop-title">{{item.shopName}}</view>
+        <block wx:for="{{item.products}}" wx:key="name" wx:for-item="p">
+          <view class="prod">
+            <image class="thumb" src="{{p.image}}" mode="aspectFill" />
+            <view class="meta">
+              <text class="pname">{{p.name}}</text>
+              <text class="psku">{{p.sku}}</text>
+              <view class="price-row">
+                <text class="price">¥ {{p.price}}</text>
+                <text class="qty">x {{p.qty}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+
+    <!-- Cells -->
+    <van-cell-group>
+      <van-cell title="优惠券码" value="暂无优惠" is-link />
+      <van-cell title="配送方式" value="免运费 快递" />
+      <van-cell title="发票" value="不开发票" />
+      <van-field label="买家留言" placeholder="点击给商家留言" input-align="right" border="false" />
+    </van-cell-group>
+
+    <!-- Spacer to avoid footer overlap -->
+    <view style="height: 100px"></view>
+  </scroll-view>
+
+  <!-- Footer Fixed -->
+  <view class="footer">
+    <view class="total">合计：<text class="strong">¥ {{total}}</text></view>
+    <van-button type="danger" round size="small" custom-style="height:40px; min-width:120px;" bindtap="submitOrder">提交订单</van-button>
+  </view>
+</view>

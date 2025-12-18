@@ -2,7 +2,7 @@
 /* Custom Header */
 .custom-header {
   background: #fff;
-  padding-top: 50px; /* Status bar area */
+  padding-top: 55px; /* Status bar area */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -103,8 +103,12 @@
   margin-top: 10px;
 }
 
-.action-btn button {
-  width:30% !important;
+.action-buttons .van-button {
+ /* padding:10px 20px; */
+ display: inline-block; /* 行内块，宽度默认由内容/内边距决定 */
+ padding: 5px 25px; /* 左右内边距会撑宽按钮，覆盖 width */
+ width: auto;
+ height: auto;
   /* min-width: 52px !important;
   font-size: 12px !important;
   height: 28px !important;
@@ -115,7 +119,7 @@
 /* Bottom Bar */
 .bottom-bar {
   position: fixed;
-  bottom: 48px;
+  bottom: 80px;
   left: 0;
   width: 100%;
   height: 50px;

@@ -53,7 +53,7 @@
       <van-cell title="我的订单" value="全部订单 >"  border="{{ false }}" title-class="card-title" value-class="card-more" /> 
     <view class="order-grid">
       <view class="grid-item" bindtap="goOrder" data-type="1">
-        <van-icon name="balance-pay" size="26px" color="#666" />
+        <van-icon name="balance-pay"  size="26px" color="#666" />
         <text>待付款</text>
       </view>
       <view class="grid-item" bindtap="goOrder" data-type="2">

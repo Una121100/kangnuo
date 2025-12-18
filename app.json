@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/index/index", "pages/product/product", "pages/cart/cart", "pages/order/order", "pages/profile/profile"],
+  "pages": ["pages/index/index", "pages/product/product", "pages/cart/cart", "pages/order/order", "pages/confirm/confirm", "pages/profile/profile"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

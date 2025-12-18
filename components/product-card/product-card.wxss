@@ -1,6 +1,6 @@
 .product-card {
   overflow: hidden;
-  margin: 12px 0;
+  /* margin: 12px 0; */
 }
 
 .cover {
@@ -19,7 +19,7 @@
 
 .sold { color: var(--muted); margin-left: 8px; }
 
-.product-card.compact { margin: 8px 0; }
+.product-card.compact { margin: 0; }
 .product-card.compact .cover { height: 160px; }
 .product-card.compact .title { display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; }
 .product-card.compact .desc { display: none; }
