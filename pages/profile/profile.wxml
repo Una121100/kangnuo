@@ -1,10 +1,107 @@
 <view class="container">
-  <view class="card" style="padding:12px;">
-    <image src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400" mode="aspectFill" style="width:80px;height:80px;border-radius:50%;"></image>
-    <text style="display:block;margin-top:8px;font-weight:600;">游客</text>
-    <text style="color:#999;">欢迎来到康诺严选商城</text>
-    <button class="btn" style="margin-top:16px;" bindtap="goOrders">我的订单</button>
+  <!-- Header Background & Content -->
+  <view class="header-section">
+    <!-- Top Actions -->
+    <view class="top-actions">
+      <view class="action-icon">
+        <van-icon name="ellipsis" size="20px" color="#333" />
+      </view>
+      <view class="action-icon">
+        <van-icon name="chat-o" size="20px" color="#333" />
+      </view>
+    </view>
+
+    <!-- User Info -->
+    <view class="user-info">
+      <view class="avatar-container">
+        <!-- Placeholder for avatar if no image -->
+        <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="aspectFill"></image>
+      </view>
+      <view class="user-details">
+        <view class="user-name">{{userInfo.nickName}}</view>
+        <view class="user-extra">
+          <text class="user-phone">188****3924</text>
+          <view class="update-btn" bindtap="onTapFeature" data-type="更新头像昵称">更新头像昵称</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Stats Row -->
+    <view class="stats-row">
+      <view class="stat-item" bindtap="onTapFeature" data-type="优惠券">
+        <van-icon name="coupon-o" size="24px" color="#333" />
+        <text>优惠券</text>
+      </view>
+      <view class="stat-item" bindtap="onTapFeature" data-type="商品收藏">
+        <van-icon name="star-o" size="24px" color="#333" />
+        <text>商品收藏</text>
+      </view>
+      <view class="stat-item" bindtap="onTapFeature" data-type="店铺收藏">
+        <van-icon name="bookmark-o" size="24px" color="#333" />
+        <text>店铺收藏</text>
+      </view>
+      <view class="stat-item" bindtap="onTapFeature" data-type="浏览足迹">
+        <van-icon name="clock-o" size="24px" color="#333" />
+        <text>浏览足迹</text>
+      </view>
+    </view>
   </view>
 
+  <!-- My Orders -->
+  <view class="card-section">
+    <!-- <van-cell title="我的订单" value="'全部订单 >'" is-link url="/pages/order/order?type=0" border="{{ false }}" title-class="card-title" value-class="card-more" /> -->
+      <van-cell title="我的订单" value="全部订单 >"  border="{{ false }}" title-class="card-title" value-class="card-more" /> 
+    <view class="order-grid">
+      <view class="grid-item" bindtap="goOrder" data-type="1">
+        <van-icon name="balance-pay" size="26px" color="#666" />
+        <text>待付款</text>
+      </view>
+      <view class="grid-item" bindtap="goOrder" data-type="2">
+        <van-icon name="paid" size="26px" color="#666" />
+        <text>待发货</text>
+      </view>
+      <view class="grid-item" bindtap="goOrder" data-type="3">
+        <van-icon name="logistics" size="26px" color="#666" />
+        <text>待收货</text>
+      </view>
+      <view class="grid-item" bindtap="goOrder" data-type="4">
+        <van-icon name="comment-o" size="26px" color="#666" />
+        <text>待评价</text>
+      </view>
+      <view class="grid-item" bindtap="goOrder" data-type="5">
+        <van-icon name="after-sale" size="26px" color="#666" />
+        <text>退款/售后</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Service Grid -->
+  <view class="card-section">
+    <view class="service-grid">
+      <view class="grid-item" bindtap="onTapFeature" data-type="钱包">
+        <van-icon name="gold-coin-o" size="26px" color="#666" />
+        <text>我的钱包</text>
+      </view>
+      <view class="grid-item" bindtap="onTapFeature" data-type="收货地址">
+        <van-icon name="location-o" size="26px" color="#666" />
+        <text>收货地址</text>
+      </view>
+      <view class="grid-item" bindtap="onTapFeature" data-type="官方客服">
+        <van-icon name="service-o" size="26px" color="#666" />
+        <text>官方客服</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Guess You Like -->
+  <view class="guess-section">
+    <view class="section-title">猜你喜欢</view>
+    <!-- Placeholder for product list -->
+    <view class="empty-list">
+      <!-- Content would go here -->
+    </view>
+  </view>
+
+  <view style="height: 100px;"></view> <!-- Spacer for tabbar -->
   <tabbar current="profile"></tabbar>
 </view>

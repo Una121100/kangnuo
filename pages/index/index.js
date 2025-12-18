@@ -40,11 +40,11 @@ Page({
   },
   onMenu() { wx.showToast({ title: '分类开发中', icon: 'none' }) },
   onMsg() {
-    const curr = wx.getStorageSync('enableVConsole') === true
-    wx.setStorageSync('enableVConsole', !curr)
-    try { wx.setEnableDebug({ enableDebug: !curr }) } catch (e) { }
-    wx.showToast({ title: !curr ? '调试已开启' : '调试已关闭', icon: 'none' })
-    setTimeout(() => { wx.reLaunch({ url: '/pages/index/index' }) }, 500)
+    // const curr = wx.getStorageSync('enableVConsole') === true
+    // wx.setStorageSync('enableVConsole', !curr)
+    // try { wx.setEnableDebug({ enableDebug: !curr }) } catch (e) { }
+    // wx.showToast({ title: !curr ? '调试已开启' : '调试已关闭', icon: 'none' })
+    // setTimeout(() => { wx.reLaunch({ url: '/pages/index/index' }) }, 500)
   },
   onAddToCart(e) {
     const id = e.detail.id

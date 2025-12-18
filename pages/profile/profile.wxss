@@ -1,1 +1,194 @@
-/* 可根据需要拓展设置 */
+/* Global Background */
+page {
+  background-color: #f7f8fa;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+/* Header Section */
+.header-section {
+  background: linear-gradient(to bottom, #ffeef1, #fff);
+  padding: 140rpx 30rpx 30rpx; /* Top padding for status bar */
+  position: relative;
+  
+}
+
+/* Top Actions */
+.top-actions {
+  position: absolute;
+  top: 140rpx; /* Align with content start */
+  right: 30rpx;
+  display: flex;
+  gap: 20rpx;
+}
+
+.action-icon {
+  width: 60rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.avatar-container {
+  margin-right: 30rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.user-extra {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.user-phone {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.update-btn {
+  font-size: 20rpx;
+  color: #666;
+  background-color: rgba(255,255,255,0.8);
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  border: 1px solid #eee;
+}
+
+/* Stats Row */
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.stat-item text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* Card Sections */
+.card-section {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx 24rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.02);
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 30rpx;
+}
+
+.card-more {
+  color: #999 !important;
+  font-size: 24rpx;
+}
+
+/* Order Grid */
+.order-grid {
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx 0;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.grid-item text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* Service Grid */
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30rpx 0;
+}
+
+.service-grid .grid-item {
+  width: 25%; /* 4 columns */
+  margin-bottom: 20rpx;
+}
+
+/* Guess You Like */
+.guess-section {
+  margin: 40rpx 24rpx;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding: 0 20rpx;
+}
+
+/* Decorative lines for title (optional) */
+/* .section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40rpx;
+  height: 1px;
+  background-color: #ccc;
+}
+.section-title::before { left: -40rpx; }
+.section-title::after { right: -40rpx; } */
+
+.empty-list {
+  height: 200rpx;
+  /* Placeholder for future content */
+}

@@ -1,28 +1,73 @@
 <view class="container">
-  <view class="card" wx:if="{{cart.items.length}}" style="padding:12px;">
-    <block wx:for="{{cart.items}}" wx:key="id">
-      <view class="item">
-        <image class="thumb" src="{{item.image}}" mode="aspectFill"></image>
-        <view class="meta">
-          <text class="name">{{item.name}}</text>
-          <text class="price">¥{{item.price}}</text>
-          <view class="qty">
-            <button size="mini" bindtap="dec" data-id="{{item.id}}">-</button>
-            <text class="count">{{item.qty}}</text>
-            <button size="mini" bindtap="inc" data-id="{{item.id}}">+</button>
-            <button size="mini" type="warn" bindtap="remove" data-id="{{item.id}}" style="margin-left:8px;">移除</button>
-          </view>
-        </view>
-        <text class="subtotal">¥{{item.subtotal}}</text>
-      </view>
-    </block>
-    <view class="total">
-      <text>共 {{cart.totals.totalCount}} 件</text>
-      <text class="price">合计 ¥{{cart.totals.totalPrice}}</text>
-    </view>
-    <button class="btn" bindtap="goOrder">去结算</button>
+  <!-- Custom Header -->
+  <view class="custom-header">
+    <view class="header-title">购物车</view>
   </view>
-  <view wx:else style="text-align:center;color:#999;margin-top:40px;">购物车空空如也</view>
+  <scroll-view scroll-y="true" class="page-mainer">
+    <view class="cart-list" wx:if="{{cart.items.length}}">
+      <!-- Shop Group (Assuming one shop for now based on current structure, but styled as per design) -->
+      <view class="shop-group">
+        <view class="shop-header">
+          <van-checkbox value="{{ allChecked }}" bind:change="onAllChecked" checked-color="#ee0a24" icon-size="18px">
+            <view class="shop-name">
+              <van-icon name="shop-o" size="18px" />
+              <text>康诺严选自营店</text>
+              <van-icon name="arrow" color="#999" size="14px" />
+            </view>
+          </van-checkbox>
+        </view>
 
+        <view class="product-list">
+          <block wx:for="{{cart.items}}" wx:key="id">
+            <van-swipe-cell right-width="{{ 65 }}">
+              <view class="product-item">
+                <view class="check-box">
+                  <van-checkbox value="{{ item.checked }}" bind:change="onItemCheck" data-id="{{item.id}}" checked-color="#ee0a24" icon-size="18px"></van-checkbox>
+                </view>
+                <view class="product-content">
+                  <image class="product-img" src="{{item.image}}" mode="aspectFill"></image>
+                  <view class="product-info">
+                    <view class="product-name">{{item.name}}</view>
+                    <view class="product-sku">默认规格</view> <!-- Placeholder SKU -->
+                    <view class="product-bottom">
+                      <view class="product-price">
+                        <text class="currency">¥</text>
+                        <text class="price-num">{{item.price}}</text>
+                      </view>
+                      <van-stepper value="{{ item.qty }}" bind:change="onQtyChange" data-id="{{item.id}}" button-size="22px" theme="round" />
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view slot="right" class="delete-btn" bindtap="remove" data-id="{{item.id}}">删除</view>
+            </van-swipe-cell>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="empty-cart">
+      <van-icon name="shopping-cart-o" size="64px" color="#ccc" />
+      <text>购物车空空如也</text>
+      <van-button type="danger" round size="small" bindtap="goHome" custom-style="margin-top:20px; width:120px;">去逛逛</van-button>
+    </view>
+  </scroll-view>
+
+  <!-- Bottom Submit Bar -->
+  <view class="bottom-bar">
+    <van-submit-bar
+      price="{{ totalPrice * 100 }}"
+      button-text="结算({{ totalCount }})"
+      bind:submit="goOrder"
+      tip="{{ true }}"
+      custom-class="custom-submit-bar"
+    >
+      <van-checkbox value="{{ allChecked }}" bind:change="onAllChecked" checked-color="#ee0a24">全选</van-checkbox>
+      <view slot="tip">
+        不含运费和优惠
+      </view>
+    </van-submit-bar>
+  </view>
+  
+  <!-- Spacer -->
   <tabbar current="cart"></tabbar>
 </view>

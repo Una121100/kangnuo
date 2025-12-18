@@ -1,17 +1,99 @@
 <view class="container">
-  <view class="card" style="padding:12px;">
-    <view class="row" style="justify-content:space-between;">
-      <text>订单确认</text>
-      <text class="price">¥{{cart.totals.totalPrice}}</text>
-    </view>
-    <block wx:for="{{cart.items}}" wx:key="id">
-      <view class="row" style="padding:6px 0;">
-        <text style="flex:1;">{{item.name}} × {{item.qty}}</text>
-        <text>¥{{item.subtotal}}</text>
+  <!-- Custom Header with Search -->
+  <view class="custom-header">
+    <view class="nav-bar">
+      <van-icon name="arrow-left" size="20px" class="back-icon" bindtap="goBack" />
+      <text class="title">我的订单</text>
+      <view class="header-right">
+        
       </view>
-    </block>
-    <button class="btn" style="width:100%;" bindtap="submit">提交订单</button>
+    </view>
+    <van-search value="{{ searchValue }}" placeholder="请输入搜索关键词" background="#fff" shape="round" />
   </view>
 
-  <tabbar current="order"></tabbar>
+  <!-- Tabs -->
+  <van-tabs active="{{ activeTab }}" bind:change="onTabChange" color="#ee0a24" sticky offset-top="{{ 90 }}" animated swipeable>
+    <van-tab title="全部" name="0"></van-tab>
+    <van-tab title="待付款" name="1"></van-tab>
+    <van-tab title="待成团" name="2"></van-tab>
+    <van-tab title="待发货" name="3"></van-tab>
+    <van-tab title="待收货" name="4"></van-tab>
+  </van-tabs>
+
+  <!-- Order List -->
+  <scroll-view scroll-y="true" class="page-mainer" style="padding-bottom: {{ activeTab === '1' ? '50px' : '0' }}">
+    <block wx:if="{{ filteredOrders.length }}">
+      <block wx:for="{{ filteredOrders }}" wx:key="id">
+        <view class="order-card">
+          <!-- Shop Header -->
+          <view class="shop-header">
+            <view class="shop-info">
+              <!-- Show checkbox only in Pending Pay tab -->
+              <van-checkbox wx:if="{{ activeTab === '1' }}" value="{{ item.checked }}" bind:change="onOrderCheck" data-id="{{item.id}}" checked-color="#ee0a24" icon-size="16px" style="margin-right: 8px;"></van-checkbox>
+              <!-- <van-icon name="shop-o" size="16px" />
+              <text class="shop-name">{{ item.shopName }}</text> -->
+            </view>
+            <text class="order-status" style="color: {{ item.statusColor }}">{{ item.statusText }}</text>
+          </view>
+          
+          
+
+          <!-- Products -->
+          <block wx:for="{{ item.products }}" wx:key="idx" wx:for-item="prod">
+            <van-card
+              num="{{ prod.qty }}"
+              price="{{ prod.price }}"
+              desc="{{ prod.sku }}"
+              title="{{ prod.name }}"
+              thumb="{{ prod.image }}"
+            >
+            </van-card>
+          </block>
+
+          <!-- Total & Actions -->
+          <view class="card-footer">
+           
+            <view class="total-price">
+              <view class="order-sn">订单编号：{{ item.orderSn }}</view>
+              <view class="price-symbol" style="display: flex;align-items: center;">
+                <text>合计：</text><text class="price-num">¥{{ item.totalPrice }}</text>
+              </view>
+            </view>
+            
+            <view class="action-buttons">
+              <block wx:if="{{ item.status === 1 }}"> <!-- Pending Pay -->
+                 <van-button round size="mini" type="default"  custom-class="action-btn">取消订单</van-button>
+                 <van-button round size="mini" type="danger" plain   custom-class="action-btn">确认付款</van-button>
+              </block>
+              <!-- <block wx:else>
+                <van-button round size="mini" type="default" custom-style="min-width: 72px;" custom-class="action-btn">查看物流</van-button>
+              </block> -->
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <view wx:else class="empty-state">
+      <text>暂无相关订单</text>
+    </view>
+  </scroll-view>
+
+  <!-- Bottom Payment Bar (Only for Pending Pay Tab) -->
+  <view class="bottom-bar" wx:if="{{ activeTab === '1' }}">
+    <view class="select-all">
+      <van-checkbox value="{{ allChecked }}" bind:change="onAllChecked" checked-color="#ee0a24">全选</van-checkbox>
+    </view>
+    <view class="bar-right">
+      <view class="total-text">
+        合计: <text class="total-symbol">¥</text><text class="total-num">{{ selectedTotal }}</text>
+        <text class="freight-tip">(含运费¥0)</text>
+      </view>
+      <van-button type="danger" square custom-style="height: 50px; width: 100px; font-size: 16px;">确认付款</van-button>
+    </view>
+  </view>
+
+  <!-- Tabbar (Only show if not in sub-page mode, but assuming this replaces current order page which has tabbar) -->
+  <!-- If this is a main tab page, we keep it. If accessed via 'My Orders' it might not need tabbar but usually 'Order' is not a main tab in typical apps unless it's a specific 'Cart' or 'User' tab. 
+       The current project has 'order' as a tabbar item. -->
+  <tabbar current="order"></tabbar> 
 </view>

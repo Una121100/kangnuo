@@ -4,7 +4,7 @@
   right: 0;
   bottom: 0;
   display: flex;
-  background: linear-gradient(90deg, #e0f7ff 0%, #b3e5fc 100%);
+  background:#fff;
   border-top: 1px solid #eee;
 }
 .tab {

@@ -1,1 +1,172 @@
-.row { display:flex; align-items:center; }
+
+/* Custom Header */
+.custom-header {
+  background: #fff;
+  padding-top: 50px; /* Status bar area */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 10px;
+}
+
+.back-icon {
+  padding: 4px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+/* Order List */
+.order-list {
+  padding: 12px;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.shop-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.order-status {
+  font-size: 14px;
+}
+
+.order-sn {
+  font-size: 12px;
+  color: #999;
+  /* margin-bottom: 12px; */
+}
+
+.card-footer {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.total-price {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-symbol {
+  font-size: 14px;
+  color: #333;
+}
+
+.price-num {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ee0a24;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.action-btn button {
+  width:30% !important;
+  /* min-width: 52px !important;
+  font-size: 12px !important;
+  height: 28px !important;
+  line-height: 26px !important;
+  padding: 0 8px !important; */
+}
+
+/* Bottom Bar */
+.bottom-bar {
+  position: fixed;
+  bottom: 48px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 12px;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.select-all {
+  display: flex;
+  align-items: center;
+}
+
+.bar-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.total-text {
+  margin-right: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: baseline;
+}
+
+.total-symbol {
+  font-size: 12px;
+  color: #ee0a24;
+  margin-left: 4px;
+}
+
+.total-num {
+  font-size: 18px;
+  color: #ee0a24;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.freight-tip {
+  font-size: 10px;
+  color: #999;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  color: #999;
+  font-size: 14px;
+}
